@@ -32,7 +32,7 @@ var renderText = function (ctx, printTexts, posX, posY, maxWidth) {
   ctx.fillText(printTexts, posX, posY, maxWidth);
 };
 
-var getSuturation = function (saturationRange) {
+var getRandomSuturation = function (saturationRange) {
   return Math.floor(Math.random() * Math.floor(saturationRange)) + '%';
 };
 var renderRect = function (ctx, posX, posY, rectWidth, rectHeight) {
@@ -59,7 +59,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'hsl(200, ' +  getSuturation(100) + ', 50%)';
+      ctx.fillStyle = 'hsl(200, ' + getRandomSuturation(100) + ', 50%)';
     }
 
     var rectX = CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i;
