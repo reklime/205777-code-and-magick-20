@@ -32,8 +32,8 @@ var renderText = function (ctx, printTexts, posX, posY, maxWidth) {
   ctx.fillText(printTexts, posX, posY, maxWidth);
 };
 
-var getRandomSuturation = function (saturationRange) {
-  return Math.floor(Math.random() * Math.floor(saturationRange)) + '%';
+var getRandomSuturation = function (suturationRange) {
+  return Math.floor(Math.random() * Math.floor(suturationRange)) + '%';
 };
 var renderRect = function (ctx, posX, posY, rectWidth, rectHeight) {
   ctx.fillRect(posX, posY, rectWidth, rectHeight);
