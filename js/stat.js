@@ -10,7 +10,7 @@ var TEXT_HEIGHT = 10;
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
 var BAR_GAP = 50;
-var FONT_COLOR = '#000';
+var TEXT_COLOR = '#000';
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -47,7 +47,7 @@ window.renderStatistics = function (ctx, players, times) {
   var fontFamily = 'PT Mono';
 
   ctx.font = fontSize + fontFamily;
-  ctx.fillStyle = FONT_COLOR;
+  ctx.fillStyle = TEXT_COLOR;
 
   renderText(ctx, 'Ура вы победили!', 120, 40);
   renderText(ctx, 'Список результатов', 120, 60);
@@ -59,8 +59,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      var saturation = getSuturation(100);
-      ctx.fillStyle = 'hsl(200, ' + saturation + ', 50%)';
+      ctx.fillStyle = 'hsl(200, ' +  getSuturation(100) + ', 50%)';
     }
 
     var rectX = CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i;
@@ -68,7 +67,7 @@ window.renderStatistics = function (ctx, players, times) {
 
     renderRect(ctx, rectX, rectY, BAR_WIDTH, barHeight);
 
-    ctx.fillStyle = FONT_COLOR;
+    ctx.fillStyle = TEXT_COLOR;
     var namesX = CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i;
     var namesY = CLOUD_Y + CLOUD_HEIGHT - FONT_GAP;
     renderText(ctx, players[i], namesX, namesY, BAR_WIDTH);
