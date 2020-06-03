@@ -41,7 +41,7 @@ var generateRandomNumber = function (min, max) {
   return Math.floor(randomNumber);
 };
 
-var renderWizard = function(wizard) {
+var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
