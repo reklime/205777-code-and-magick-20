@@ -59,25 +59,23 @@ var generateWizardObject = function () {
   return obj;
 };
 
-var createWizards = function () {
+var createWizards = function (quantity) {
 //  Создаем магов
-  for (var i = 0; i < PLAYERS_QUANTITIY; i++) {
+  var players = [];
+  for (var i = 0; i < quantity; i++) {
     players.push(generateWizardObject());
   }
+  return players;
 };
 
 
 var setup = document.querySelector('.setup');
-
-var players = [];
-
-
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
     .querySelector('.setup-similar-item');
 var similarListElement = document.querySelector('.setup-similar-list');
 
-createWizards();
+var players = createWizards(PLAYERS_QUANTITIY);
 
 var fragment = document.createDocumentFragment();
 
