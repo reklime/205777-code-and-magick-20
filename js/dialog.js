@@ -4,6 +4,7 @@
   var setup = document.querySelector('.setup');
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
+
   var dialogHandle = setup.querySelector('.upload');
 
   // Создадим функцию проверки в фокусе ли элемент. hasFocus не сработал
@@ -23,6 +24,8 @@
   };
 
   var openPopup = function () {
+    setup.style.top = '';
+    setup.style.left = '';
     setup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
   };
