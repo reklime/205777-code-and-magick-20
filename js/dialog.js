@@ -6,6 +6,15 @@
   var setupClose = setup.querySelector('.setup-close');
   var dialogHandle = setup.querySelector('.upload');
 
+  // Создадим функцию проверки в фокусе ли элемент. hasFocus не сработал
+  var isFocused = function (el) {
+    if (document.activeElement === el) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   var onPopupEscPress = function (evt) {
     if (evt.key === 'Escape' && isFocused(window.constants.wizardNameInput) === false) {
       evt.preventDefault();
